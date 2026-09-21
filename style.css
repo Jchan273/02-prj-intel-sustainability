@@ -1,3 +1,7 @@
+/* =================================
+   GLOBAL STYLES
+================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +10,14 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f3f3f3;
+    background-color: #f3f3f3;
     color: #222;
 }
 
 
-/* HERO */
+/* =================================
+   HERO SECTION
+================================= */
 
 .hero {
     width: 100%;
@@ -27,9 +33,9 @@ body {
 
     background: linear-gradient(
         115deg,
-        #0085ca,
-        #0068a9,
-        #004481
+        #0085ca 0%,
+        #0068a9 45%,
+        #004481 100%
     );
 
     padding: 40px 20px;
@@ -40,18 +46,30 @@ body {
     max-width: 650px;
 }
 
+
+/* Intel logo */
+
 .intel-logo {
     width: 65px;
     height: auto;
     margin-bottom: 18px;
+
+    filter: brightness(0) invert(1);
 }
+
+
+/* Main heading */
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.2rem);
     line-height: 1.05;
+
     font-weight: 700;
     letter-spacing: -1px;
 }
+
+
+/* Small blue divider */
 
 .divider {
     width: 55px;
@@ -59,8 +77,11 @@ body {
 
     margin: 18px auto;
 
-    background: #00aeef;
+    background-color: #00aeef;
 }
+
+
+/* Description */
 
 .hero p {
     max-width: 575px;
@@ -72,7 +93,9 @@ body {
 }
 
 
-/* TIMELINE */
+/* =================================
+   TIMELINE SECTION
+================================= */
 
 .timeline-section {
     max-width: 1200px;
@@ -81,6 +104,9 @@ body {
 
     padding: 28px 40px 30px;
 }
+
+
+/* Timeline row */
 
 .timeline {
     display: flex;
@@ -93,8 +119,13 @@ body {
 
     scroll-snap-type: x mandatory;
 
+    scrollbar-width: thin;
+
     scroll-behavior: smooth;
 }
+
+
+/* Individual cards */
 
 .timeline-card {
     position: relative;
@@ -103,31 +134,41 @@ body {
 
     height: 250px;
 
-    background: white;
+    background-color: white;
 
     overflow: hidden;
 
     scroll-snap-align: start;
 
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.12);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
+
+/* Card hover */
+
 .timeline-card:hover {
     transform: translateY(-7px);
 
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.2);
 }
 
 
-/* CARD */
+/* =================================
+   CARD CONTENT
+================================= */
 
 .card-content {
     padding: 14px;
 }
+
+
+/* Year */
 
 .year {
     display: block;
@@ -140,12 +181,18 @@ body {
     font-weight: bold;
 }
 
+
+/* Card title */
+
 .card-content h2 {
     margin-bottom: 9px;
 
     font-size: 14px;
     font-weight: 600;
 }
+
+
+/* Card image */
 
 .card-content img {
     display: block;
@@ -157,7 +204,9 @@ body {
 }
 
 
-/* HOVER EFFECT */
+/* =================================
+   HOVER OVERLAY
+================================= */
 
 .card-overlay {
     position: absolute;
@@ -165,7 +214,6 @@ body {
     inset: 0;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -173,7 +221,7 @@ body {
 
     color: white;
 
-    background: rgba(0, 63, 120, 0.94);
+    background-color: rgba(0, 63, 120, 0.94);
 
     opacity: 0;
 
@@ -184,11 +232,17 @@ body {
         transform 0.3s ease;
 }
 
+
+/* Show overlay when hovering */
+
 .timeline-card:hover .card-overlay {
     opacity: 1;
 
     transform: translateY(0);
 }
+
+
+/* Overlay year */
 
 .overlay-year {
     display: block;
@@ -201,11 +255,17 @@ body {
     font-weight: bold;
 }
 
+
+/* Overlay heading */
+
 .card-overlay h2 {
     margin-bottom: 12px;
 
     font-size: 18px;
 }
+
+
+/* Overlay paragraph */
 
 .card-overlay p {
     font-size: 13px;
@@ -214,7 +274,9 @@ body {
 }
 
 
-/* INSTRUCTION */
+/* =================================
+   INSTRUCTION
+================================= */
 
 .instruction {
     margin-top: 5px;
@@ -227,7 +289,224 @@ body {
 }
 
 
-/* MOBILE */
+/* =================================
+   NEW THREE-COLUMN SECTION
+================================= */
+
+.container {
+    width: 100%;
+}
+
+
+/*
+   Makes the three new cards visually
+   match the Intel theme.
+*/
+
+.container article h3 {
+    color: #003f78;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.container article p {
+    color: #333;
+
+    line-height: 1.6;
+}
+
+
+/* Icon spacing */
+
+.container article h3 span {
+    margin-left: 6px;
+}
+
+
+/* Learn More buttons */
+
+.container .btn-primary {
+    background-color: #0068a9;
+
+    border-color: #0068a9;
+
+    font-weight: 600;
+}
+
+
+.container .btn-primary:hover,
+.container .btn-primary:focus {
+    background-color: #003f78;
+
+    border-color: #003f78;
+}
+
+
+/* =================================
+   NEWSLETTER
+================================= */
+
+#newsletter-heading {
+    color: #003f78;
+
+    font-weight: 700;
+}
+
+
+/* Newsletter text */
+
+#email-help {
+    color: #444;
+}
+
+
+/* Newsletter button */
+
+form .btn-primary {
+    background-color: #0068a9;
+
+    border-color: #0068a9;
+
+    font-weight: 600;
+}
+
+
+form .btn-primary:hover,
+form .btn-primary:focus {
+    background-color: #003f78;
+
+    border-color: #003f78;
+}
+
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+/*
+   Make keyboard focus clearly visible.
+*/
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #00aeef;
+
+    outline-offset: 3px;
+}
+
+
+/*
+   Make links easy to see against the
+   dark footer.
+*/
+
+footer a {
+    text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #7ddcff !important;
+}
+
+
+/* =================================
+   ACCORDION
+================================= */
+
+#faq-heading {
+    color: #003f78;
+
+    font-weight: 700;
+}
+
+
+/* Accordion buttons */
+
+.accordion-button {
+    font-weight: 600;
+}
+
+
+/* Accordion when opened */
+
+.accordion-button:not(.collapsed) {
+    color: #003f78;
+}
+
+
+/* =================================
+   RTL SUPPORT
+================================= */
+
+/*
+   Bootstrap RTL handles most of the
+   direction automatically.
+
+   These rules make sure the custom
+   timeline text follows the direction
+   of the page as well.
+*/
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+
+/*
+   Keep the hero centered even when
+   the document is RTL.
+*/
+
+html[dir="rtl"] .hero {
+    text-align: center;
+}
+
+
+/*
+   Center the timeline instruction.
+*/
+
+html[dir="rtl"] .instruction {
+    text-align: center;
+}
+
+
+/*
+   The timeline itself remains Flexbox,
+   as required by the original project.
+*/
+
+html[dir="rtl"] .timeline {
+    direction: rtl;
+}
+
+
+/* =================================
+   LTR SUPPORT
+================================= */
+
+html[dir="ltr"] body {
+    text-align: left;
+}
+
+html[dir="ltr"] .hero {
+    text-align: center;
+}
+
+html[dir="ltr"] .instruction {
+    text-align: center;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 700px) {
 
@@ -237,23 +516,32 @@ body {
         padding: 40px 20px;
     }
 
+
     .intel-logo {
         width: 60px;
     }
+
 
     .hero h1 {
         font-size: 2rem;
     }
 
+
     .hero p {
         font-size: 13px;
     }
+
 
     .timeline-section {
         padding: 25px 20px 30px;
     }
 
+
+    /* Stack cards vertically */
+
     .timeline {
+        display: flex;
+
         flex-direction: column;
 
         overflow-x: visible;
@@ -263,6 +551,7 @@ body {
         padding: 5px 0;
     }
 
+
     .timeline-card {
         width: 100%;
 
@@ -271,21 +560,55 @@ body {
         flex: none;
     }
 
+
     .timeline-card:hover {
         transform: translateY(-4px);
     }
+
 
     .card-content img {
         height: 175px;
     }
 
+
+    /* Don't show desktop scroll instruction */
+
     .instruction {
         display: none;
     }
+
+
+    /*
+       Give the new Bootstrap sections
+       a little more room on mobile.
+    */
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .container article {
+        text-align: right;
+    }
+
+
+    footer {
+        text-align: center;
+    }
+
+
+    footer .justify-content-md-end {
+        justify-content: center !important;
+    }
+
 }
 
 
-/* SMALL PHONES */
+/* =================================
+   SMALL PHONES
+================================= */
 
 @media (max-width: 400px) {
 
@@ -309,4 +632,5 @@ body {
     .timeline-card {
         height: 260px;
     }
+
 }
